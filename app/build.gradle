@@ -9,12 +9,17 @@ android {
 
     defaultConfig {
         applicationId "com.example.instagramclone"
-        minSdk 24
+        minSdk 28
         targetSdk 33
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+        compose true
     }
 
     buildTypes {

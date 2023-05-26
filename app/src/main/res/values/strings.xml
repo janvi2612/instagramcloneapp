@@ -2,4 +2,19 @@
     <string name="app_name">InstagramClone</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="english">English</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="or">OR</string>
+    <string name="phone_number_username_or_email">phone number,username, or email</string>
+    <string name="password">password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="login">Log In</string>
+    <string name="don_t_have_an_account_sign_up">Don’t have an account? <font color="#1877F2">sign up</font></string>
+    <string name="signup_to_see_photos_and_videos_from_your_friend">Signup to see photos and videos from your friend</string>
+    <string name="email">email</string>
+    <string name="phone">phone</string>
+    <string name="name">name</string>
+    <string name="user_name">username</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account_log_in">Already have an account? <font color="#1877F2">Log In</font></string>
 </resources>
