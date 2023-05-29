@@ -12,9 +12,10 @@ import com.example.instagramclone.model.Status
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
+import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
     private var _binding:FragmentHomeBinding? = null
     private val binding get() = _binding!!
