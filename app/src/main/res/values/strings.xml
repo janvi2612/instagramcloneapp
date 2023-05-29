@@ -17,4 +17,11 @@
     <string name="user_name">username</string>
     <string name="sign_up">Sign Up</string>
     <string name="already_have_an_account_log_in">Already have an account? <font color="#1877F2">Log In</font></string>
+    <string name="location">Gandhinagar</string>
+    <string name="user_id">Ruffles</string>
+    <string name="like">Like</string>
+    <string name="user_caption"><b>Username </b>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</string>
+    <string name="user_id_re">Rupal0993</string>
+    <string name="btn_confirm">Confirm</string>
+    <string name="btn_delete">Delete</string>
 </resources>
