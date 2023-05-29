@@ -34,4 +34,23 @@
         <item name="cornerRadius">8dp</item>
         <item name="android:paddingVertical">10dp</item>
     </style>
+
+    <style name="Widget.MaterialComponents.Button.OutlinedButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:paddingLeft">@dimen/mtrl_btn_padding_left</item>
+        <item name="android:paddingRight">@dimen/mtrl_btn_padding_right</item>
+        <item name="strokeColor">@color/mtrl_btn_stroke_color_selector</item>
+        <item name="strokeWidth">@dimen/mtrl_btn_stroke_size</item>
+    </style>
+
+    <style name="Custom_Loading_Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+<!--    <style name="list_text_style">-->
+<!--        <item name="android:textColor">?attr/colorPrimary</item>-->
+<!--        <item name="android:fontFamily">@font/cherry_swash_multi_weight</item>-->
+<!--        <item name="android:textSize">18sp</item>-->
+<!--        <item name="android:lineHeight">26sp</item>-->
+<!--    </style>-->
+
 </resources>

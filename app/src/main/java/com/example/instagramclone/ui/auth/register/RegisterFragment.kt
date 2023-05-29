@@ -15,15 +15,16 @@ import com.example.instagramclone.databinding.FragmentRegisterBinding
 import com.example.instagramclone.model.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import dagger.hilt.android.AndroidEntryPoint
 import java.lang.ref.PhantomReference
 import java.util.regex.Pattern
 
-lateinit var auth : FirebaseAuth
 
-@SuppressLint("StaticFieldLeak")
-private lateinit var db : FirebaseFirestore
-
+@AndroidEntryPoint
 class RegisterFragment : Fragment() {
+    lateinit var auth : FirebaseAuth
+
+    private lateinit var db : FirebaseFirestore
 
     private var _binding : FragmentRegisterBinding ?= null
     private val binding get() = _binding!!
