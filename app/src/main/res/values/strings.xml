@@ -17,4 +17,15 @@
     <string name="user_name">username</string>
     <string name="sign_up">Sign Up</string>
     <string name="already_have_an_account_log_in">Already have an account? <font color="#1877F2">Log In</font></string>
+    <string name="Posts">Posts</string>
+    <string name="post_no">1,234</string>
+    <string name="Followers">Followers</string>
+    <string name="followers_no">5,678</string>
+    <string name="Following">Following</string>
+    <string name="following_no">9,101</string>
+    <string name="Username">Username</string>
+    <string name="category">Category/Genre text</string>
+    <string name="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</string>
+    <string name="link">Link goes here</string>
+    <string name="txtfollowedby">Followed by username, username and 100 others</string>
 </resources>
