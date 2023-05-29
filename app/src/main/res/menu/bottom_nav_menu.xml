@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/homeFragment"
+        android:icon="@drawable/icons__5_"
+        android:title="Home"/>
+
+    <item android:id="@+id/search"
+        android:icon="@drawable/icons__6_"
+        android:title="search"/>
+
+    <item android:id="@+id/video"
+        android:icon="@drawable/icons__7_"
+        android:title="video"/>
+
+    <item android:id="@+id/shop"
+        android:icon="@drawable/icons__8_"
+        android:title="shop"/>
+
+    <item android:id="@+id/profile_img"
+        android:icon="@drawable/avtar_1"
+        android:title="profile"/>
+
+</menu>
