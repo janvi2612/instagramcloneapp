@@ -40,9 +40,12 @@ class RegisterFragment : Fragment() {
     }
     private fun setOnClick(){
         binding.btnSignUp.setOnClickListener {
-            validation()
+            //validation()
             singUpUser()
 
+        }
+        binding.textView4.setOnClickListener {
+            findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())
         }
     }
     private fun singUpUser(){
@@ -53,14 +56,18 @@ class RegisterFragment : Fragment() {
         val username = binding.etUserNameRegistration.text.toString()
         val myuser = db.collection("UserProfile").document()
         val id =  myuser.id.toString()
-        if (email.isBlank() || password.isBlank()){
-            Toast.makeText(requireContext(),"Please Enter Email and Password",Toast.LENGTH_LONG).show()
+//        if (email.isBlank() || password.isBlank()){
+//            Toast.makeText(requireContext(),"Please Enter Email and Password",Toast.LENGTH_LONG).show()
+//            return
+//        }
+        if (!validation()){
             return
         }
 
         auth.createUserWithEmailAndPassword(email,password)
             .addOnCompleteListener(requireActivity()){
                 if (it.isSuccessful){
+
                     val user = User(name,email,number,username,"",id)
                     db.collection("UserProfile").add(user).addOnSuccessListener {
                         Toast.makeText(requireContext(),"Registration Success",Toast.LENGTH_LONG).show()
@@ -70,22 +77,62 @@ class RegisterFragment : Fragment() {
 
             }
     }
-    private fun validation(){
+    private fun validation(): Boolean {
         if (binding.etEmailRegistration.text.toString().isEmpty()){
             binding.etEmailRegistration.error = "Email is Required"
-            return
+            binding.etEmailRegistration.requestFocus()
+            return false
         }
         else if (!Patterns.EMAIL_ADDRESS.matcher(binding.etEmailRegistration.text.toString()).matches()){
             binding.etEmailRegistration.error = "Invalid Email"
-            return
+            binding.etEmailRegistration.requestFocus()
+            return false
         }
         else if (binding.etPhoneRegistration.text.toString().isEmpty()){
             binding.etPhoneRegistration.error = "Phone Number Is Required"
-            return
+            binding.etPhoneRegistration.requestFocus()
+            return false
         }
-        else if (binding.etPhoneRegistration.text.length != 10){
+        else if (binding.etPhoneRegistration.text.toString().length != 10){
             binding.etPhoneRegistration.error = "Phone Number need 10 digits"
+            binding.etPhoneRegistration.requestFocus()
+            return false
         }
+        else if (binding.etName.text.toString().isEmpty()){
+            binding.etName.error = "Name Is Required"
+            binding.etName.requestFocus()
+            return false
+        }
+        else if (binding.etUserNameRegistration.text.toString().isEmpty()){
+            binding.etUserNameRegistration.error = "User Name Is Required"
+            binding.etUserNameRegistration.requestFocus()
+            return false
+        }
+        else if (binding.etPasswordRegistration.text.toString().isEmpty()){
+            binding.etPasswordRegistration.error = "Password IS Required"
+            binding.etPasswordRegistration.requestFocus()
+            return false
+        }
+        else if (binding.etPasswordRegistration.text.toString().length < 8){
+            binding.etPasswordRegistration.error = "Password need at least 8 char"
+            return false
+        }
+        else if(!binding.etPasswordRegistration.text.toString().matches(".*[A-Z].*".toRegex())) {
+            binding.etPasswordRegistration.error = "Must Contain 1 Upper-case Character"
+            binding.etPasswordRegistration.requestFocus()
+            return false
+        }
+        else if(!binding.etPasswordRegistration.text.toString().matches(".*[a-z].*".toRegex())) {
+            binding.etPasswordRegistration.error = "Must Contain 1 Lower-case Character"
+            binding.etPasswordRegistration.requestFocus()
+            return false
+        }
+        else if(!binding.etPasswordRegistration.text.toString().matches(".*[@#\$%^&+=].*".toRegex())) {
+            binding.etPasswordRegistration.error = "Must Contain 1 Special Character (@#\$%^&+=)"
+            binding.etPasswordRegistration.requestFocus()
+            return false
+        }
+        return true
     }
 
     override fun onDestroy() {
