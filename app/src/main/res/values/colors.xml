@@ -15,4 +15,5 @@
     <color name="hint_color">#B0B0B0</color>
     <color name="btn_unselect">#5C1877F2</color>
     <color name="icon_1">#BFBDCE</color>
+    <color name="grey">#EFEFEF</color>
 </resources>
