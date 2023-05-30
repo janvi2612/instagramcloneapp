@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.instagramclone.R
 import com.example.instagramclone.databinding.FragmentHomeBinding
+import com.example.instagramclone.model.Post
 import com.example.instagramclone.model.Status
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -21,6 +22,10 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
     private lateinit var userArrayList: ArrayList<Status>
     private lateinit var myAdapter : StatusAdapter
+
+    private lateinit var usersArrayList: ArrayList<Post>
+    private lateinit var myAdapters : PostAdapter
+
     private lateinit var db :FirebaseFirestore
     private lateinit var loadingAlert: AlertDialog
 
@@ -33,12 +38,18 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater,container,false)
 
         db = FirebaseFirestore.getInstance()
-        binding.recyclerView2.layoutManager = LinearLayoutManager(requireContext())
+        myAdapter = StatusAdapter()
+        binding.recyclerView2.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL ,false)
         userArrayList = arrayListOf()
 
-        EventChangeListerner()
-        binding.recyclerView2.setHasFixedSize(true)
+        myAdapters = PostAdapter()
+        binding.recyclerViewPost.layoutManager = LinearLayoutManager(requireContext())
+        usersArrayList = arrayListOf()
 
+        EventChangeListerner()
+        EventChangeListernerPost()
+        binding.recyclerView2.setHasFixedSize(true)
+        binding.recyclerViewPost.setHasFixedSize(true)
         return binding.root
 
     }
@@ -54,28 +65,61 @@ class HomeFragment : Fragment() {
         db.collection("Userpost")
             .get().addOnSuccessListener {
 
-                if (!it.isEmpty){
                     for(data in it.documents)
                     {
-                        val request : Status? = data.toObject(Status::class.java)
-
-                        if (request != null) {
-                            userArrayList.add(request)
+                        //Timber.e(data.toString())
+                        val requests : Status? = data.toObject(Status::class.java)
+                        
+                        if (requests != null) {
+                            Timber.e(requests.toString())
+                            userArrayList.add(requests)
                         }
                             //Timber.e(userArrayList.add(request).toString())
 
                     }
-                    myAdapter = StatusAdapter()
+                    //myAdapter = StatusAdapter()
                     binding.recyclerView2.adapter = myAdapter
                      //binding.recyclerView2.adapter = StatusAdapter()
+                  //  myAdapter.notifyDataSetChanged()
                     myAdapter.setData(userArrayList)
                    // loadingAlert.dismiss()
                 }
 
 
-            }
+
 
     }
+
+
+    private fun EventChangeListernerPost(){
+
+        //loadingAlert.show()
+        db.collection("UserAddPost")
+            .get().addOnSuccessListener {
+
+                for(data in it.documents)
+                {
+                    val request : Post? = data.toObject(Post::class.java)
+
+                    if (request != null) {
+                        usersArrayList.add(request)
+                    }
+                    //Timber.e(userArrayList.add(request).toString())
+
+                }
+                //myAdapter = StatusAdapter()
+                binding.recyclerViewPost.adapter = myAdapters
+                //binding.recyclerView2.adapter = StatusAdapter()
+                //  myAdapter.notifyDataSetChanged()
+                myAdapters.setData(usersArrayList)
+                // loadingAlert.dismiss()
+            }
+
+
+
+
+    }
+
 
     override fun onDestroy() {
         super.onDestroy()
