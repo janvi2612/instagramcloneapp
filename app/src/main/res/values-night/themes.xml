@@ -13,5 +13,11 @@
         <item name="android:statusBarColor">?attr/colorOnPrimary</item>
         <item name="android:windowLightStatusBar">false</item>
         <!-- Customize your theme here. -->
+        <item name="colorOnTertiary">@color/text_gray</item>
+        <item name="colorTertiary">@color/text_gray</item>
+        <item name="colorTertiaryContainer">@color/stock_gray</item>
+        <item name="colorTertiaryFixed">@color/background_gray</item>
+        <item name="colorOnTertiaryContainer">@color/hint_color</item>
+        <item name="colorOnTertiaryFixedVariant">@color/text_gray</item>
     </style>
 </resources>

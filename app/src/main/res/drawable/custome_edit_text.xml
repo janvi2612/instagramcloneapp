@@ -2,7 +2,7 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_enabled="true" android:state_focused="true">
         <shape android:shape="rectangle">
-            <solid android:color="@android:color/white" />
+            <solid android:color="?attr/colorOnPrimary" />
             <stroke android:width="2dp" android:color="?attr/colorPrimary" />
             <corners android:radius="6dp"/>
         </shape>
@@ -11,16 +11,16 @@
     <!--the outline box turns to grey when the edit text is out of focus-->
     <item android:state_enabled="true">
         <shape android:shape="rectangle">
-            <solid android:color="@color/background_gray" />
-            <stroke android:width="2dp" android:color="@color/stock_gray" />
+            <solid android:color="?attr/colorTertiaryFixed" />
+            <stroke android:width="2dp" android:color="?attr/colorTertiaryContainer" />
             <corners android:radius="6dp"/>
         </shape>
     </item>
 
     <item android:state_enabled="false">
         <shape android:shape="rectangle">
-            <solid android:color="@color/background_gray" />
-            <stroke android:width="2dp" android:color="@color/stock_gray" />
+            <solid android:color="?attr/colorTertiaryFixed" />
+            <stroke android:width="2dp" android:color="?attr/colorTertiaryContainer" />
             <corners android:radius="6dp"/>
         </shape>
     </item>
