@@ -31,6 +31,7 @@ class PostAdapter() : RecyclerView.Adapter<PostAdapter.MyViewHolder>() {
                 error(R.drawable.baseline_error_24)
             }
 
+
             binding.imgUserPost.load(currentItem.imgpost){
                 crossfade(true)
                 transformations()
