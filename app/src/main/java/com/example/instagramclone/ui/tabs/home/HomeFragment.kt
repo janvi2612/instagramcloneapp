@@ -12,6 +12,7 @@ import com.example.instagramclone.R
 import com.example.instagramclone.databinding.FragmentHomeBinding
 import com.example.instagramclone.model.Post
 import com.example.instagramclone.model.Status
+import com.example.instagramclone.utils.getStatusBarHeight
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -49,7 +50,7 @@ class HomeFragment : Fragment() {
         myAdapter = StatusAdapter()
         binding.recyclerView2.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL ,false)
         userArrayList = arrayListOf()
-
+        binding.guideline.setGuidelineBegin(getStatusBarHeight())
         myAdapters = PostAdapter()
         binding.recyclerViewPost.layoutManager = LinearLayoutManager(requireContext())
         usersArrayList = arrayListOf()
@@ -160,7 +161,7 @@ class HomeFragment : Fragment() {
 
     }
 
-
+//
 //    override fun onDestroy() {
 //        super.onDestroy()
 //        _binding = null

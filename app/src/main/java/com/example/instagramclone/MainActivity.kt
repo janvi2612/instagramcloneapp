@@ -1,7 +1,9 @@
 package com.example.instagramclone
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -26,6 +28,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        window?.decorView?.systemUiVisibility = (View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR)
+
         auth = FirebaseAuth.getInstance()
 
         val navHostFragment = supportFragmentManager.findFragmentById(
@@ -49,6 +54,8 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.homeFragment2,
                 R.id.profileFragment
+//                R.id.loginFragment,
+//                R.id.registerFragment
             )
         )
         setCurrentDestinationListener()

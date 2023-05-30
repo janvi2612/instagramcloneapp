@@ -13,6 +13,7 @@ import com.example.instagramclone.R
 import com.example.instagramclone.databinding.FragmentLoginBinding
 import com.example.instagramclone.databinding.FragmentRegisterBinding
 import com.example.instagramclone.model.User
+import com.example.instagramclone.utils.getStatusBarHeight
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,6 +38,7 @@ class RegisterFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         db = FirebaseFirestore.getInstance()
         setOnClick()
+        binding.glRegistration.setGuidelineBegin(getStatusBarHeight())
         return binding.root
     }
     private fun setOnClick(){

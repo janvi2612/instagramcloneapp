@@ -15,6 +15,7 @@ import com.example.instagramclone.model.Profile
 import com.example.instagramclone.model.Status
 import com.example.instagramclone.ui.tabs.home.PostAdapter
 import com.example.instagramclone.ui.tabs.home.StatusAdapter
+import com.example.instagramclone.utils.getStatusBarHeight
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.AndroidEntryPoint
@@ -42,7 +43,7 @@ class ProfileFragment : Fragment() {
     ): View? {
         _binding= FragmentProfileBinding.inflate(inflater,container,false)
         db = FirebaseFirestore.getInstance()
-
+        binding.guideline.setGuidelineBegin(getStatusBarHeight())
         myAdapterprofile = ProfileAdapter()
         binding.recyclrview.layoutManager = LinearLayoutManager(requireContext(),
             LinearLayoutManager.HORIZONTAL ,false)
