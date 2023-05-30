@@ -40,4 +40,5 @@
     <string name="message">Edit Profile</string>
     <string name="subscribe">Subscribe</string>
     <string name="contact">Contact</string>
+    <string name="username">username</string>
 </resources>

@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.CircleCropTransformation
 import com.example.instagramclone.R
+import com.example.instagramclone.databinding.FragmentProfileBinding
 import com.example.instagramclone.databinding.PostListBinding
 import com.example.instagramclone.model.Post
 import com.example.instagramclone.utils.DiffUtilExt
@@ -16,7 +17,7 @@ import com.example.instagramclone.utils.DiffUtilExt
 class PostAdapter() : RecyclerView.Adapter<PostAdapter.MyViewHolder>() {
 
     private var calllist = emptyList<Post>()
-    class MyViewHolder(private val binding : PostListBinding): RecyclerView.ViewHolder(binding.root)
+    class MyViewHolder(private val binding: FragmentProfileBinding): RecyclerView.ViewHolder(binding.root)
     {
 
         @SuppressLint("StringFormatInvalid")

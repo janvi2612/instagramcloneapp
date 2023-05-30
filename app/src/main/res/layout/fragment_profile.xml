@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
             android:lineHeight="40dp"
-            android:text="username"
+            android:text="@string/username"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="22sp"
@@ -133,6 +133,7 @@
                             app:layout_constraintTop_toTopOf="parent">
 
                             <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/imgprofile"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:elevation="10dp"
