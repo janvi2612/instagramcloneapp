@@ -2,8 +2,11 @@ package com.example.instagramclone
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import com.example.instagramclone.databinding.ActivityMainBinding
 import com.example.instagramclone.utils.Constant
 import com.example.instagramclone.utils.PrefManager
@@ -18,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
     private lateinit var db: FirebaseFirestore
     private lateinit var navController: NavController
+    private lateinit var appBarConfiguration: AppBarConfiguration
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
@@ -38,5 +42,31 @@ class MainActivity : AppCompatActivity() {
         if (!isLoggedIn){
             navGraph.setStartDestination(R.id.loginFragment)
         }
+        navController.graph = navGraph
+        binding.bottomNavigationView.setupWithNavController(navController)
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.homeFragment2,
+                R.id.profileFragment
+            )
+        )
+        setCurrentDestinationListener()
+
     }
+    private fun setCurrentDestinationListener(){
+        navController.addOnDestinationChangedListener{_,destination,_->
+            when(destination.id){
+
+                    R.id.homeFragment2,
+                    R.id.profileFragment,
+                    ->{
+                        binding.bottomNavigationView.isVisible = true
+                    }
+                else -> {
+                    binding.bottomNavigationView.isVisible = false
+                }
+            }
+        }
+    }
+
 }
