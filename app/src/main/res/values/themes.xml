@@ -14,8 +14,11 @@
         <item name="android:statusBarColor">@color/icon_1</item>
         <!-- Customize your theme here. -->
 
-
         <!-- Customize your theme here. -->
-
     </style>
+
+
+
+
+
 </resources>

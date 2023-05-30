@@ -76,6 +76,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
 
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView">
@@ -85,6 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView">
 
@@ -96,7 +98,7 @@
                 android:layout_marginTop="10dp"
                 android:src="@drawable/dog_1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/recyclerView2"
                 app:shapeAppearanceOverlay="@style/Circular">
 
             </com.google.android.material.imageview.ShapeableImageView>
@@ -111,19 +113,36 @@
 
             </ImageView>
 
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+
+                android:singleLine="true"
+                android:text="Ruffles"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/recyclerView2"
+                app:layout_constraintStart_toStartOf="@+id/img_post"
+                app:layout_constraintTop_toBottomOf="@+id/img_post">
+
+
+            </TextView>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
 
+                android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                app:layout_constraintBottom_toBottomOf="@+id/img_post"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/img_post"
-                app:layout_constraintTop_toTopOf="@+id/img_post"
-                app:layout_constraintVertical_bias="1.0"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:itemCount="10"
                 tools:listitem="@layout/story_list_item">
 

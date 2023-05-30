@@ -24,7 +24,6 @@ class PostAdapter() : RecyclerView.Adapter<PostAdapter.MyViewHolder>() {
         fun bind(currentItem :Post){
             binding.variable = currentItem
 
-
             binding.txtUsernameCaption.text = itemView.context.getString(R.string.user_caption,currentItem.caption.toString())
             binding.imgInsta.load(currentItem.img){
                 crossfade(true)

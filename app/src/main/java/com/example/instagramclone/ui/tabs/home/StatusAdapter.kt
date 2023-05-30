@@ -30,6 +30,7 @@ class StatusAdapter() : RecyclerView.Adapter<StatusAdapter.MyViewHolder>() {
                 transformations(CircleCropTransformation())
                 error(R.drawable.baseline_error_24)
             }
+            binding.statusId.text = currentItem.username
             //binding.imgStatus.setImageResource(currentItem.imagepost)
 
 

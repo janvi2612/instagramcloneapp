@@ -1,5 +1,5 @@
 package com.example.instagramclone.model
 
-data class Status(var imagepost : String) {
-    constructor():this("")
+data class Status(var imagepost : String,var username:String) {
+    constructor():this("","")
 }

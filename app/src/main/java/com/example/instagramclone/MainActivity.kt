@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         ) as NavHostFragment
         navController = navHostFragment.navController
         val navGraph = navController.navInflater.inflate(R.navigation.my_nav)
+
         val isLoggedIn = PrefManager.getBoolean(
             Constant.IS_LOGIN,false
         )

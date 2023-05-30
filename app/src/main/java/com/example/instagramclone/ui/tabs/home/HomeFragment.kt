@@ -2,10 +2,12 @@ package com.example.instagramclone.ui.tabs.home
 
 import android.app.ActionBar
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import coil.load
 import com.example.instagramclone.R
 import com.example.instagramclone.databinding.FragmentHomeBinding
 import com.example.instagramclone.model.Post
@@ -28,9 +30,9 @@ class HomeFragment : Fragment() {
 
     private lateinit var db :FirebaseFirestore
     private lateinit var loadingAlert: AlertDialog
-
+    private lateinit var topicList: MutableMap<String, Any>
     lateinit var auth: FirebaseAuth
-
+    var email : String?=null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,6 +40,12 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater,container,false)
 
         db = FirebaseFirestore.getInstance()
+
+
+        EventChangeListerner()
+        EventChangeListernerPost()
+        setUpui()
+        auth= FirebaseAuth.getInstance()
         myAdapter = StatusAdapter()
         binding.recyclerView2.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL ,false)
         userArrayList = arrayListOf()
@@ -46,8 +54,7 @@ class HomeFragment : Fragment() {
         binding.recyclerViewPost.layoutManager = LinearLayoutManager(requireContext())
         usersArrayList = arrayListOf()
 
-        EventChangeListerner()
-        EventChangeListernerPost()
+
         binding.recyclerView2.setHasFixedSize(true)
         binding.recyclerViewPost.setHasFixedSize(true)
         return binding.root
@@ -58,6 +65,40 @@ class HomeFragment : Fragment() {
 //        inflater.inflate(R.menu.top_menu, menu)
 //        return true
 //    }
+
+
+    private fun setUpui(){
+        topicList = HashMap()
+//        val user_name = binding.textView5.text.toString()
+//        val user_profle = binding.btnEditProfileImg.load(""){
+//            crossfade(true)
+//            transformations()
+//            error(R.drawable.baseline_error_24)
+//        }
+
+        db.collection("UserProfile").get().addOnSuccessListener {documents ->
+
+            for (document in documents )
+            {
+                email = document.get("email").toString()
+                //Log.e("emails", "DocumentSnapshot data: ${emaildonor}")
+
+                if (auth.currentUser?.email.toString() == email){
+
+                    Timber.e(document.get("username").toString())
+                    binding.textView5.text = document.get("username").toString()
+                    binding.imgPost.load(document.get("profilepic").toString()){
+                        crossfade(true)
+                        transformations()
+                        error(R.drawable.baseline_error_24)
+                    }
+                }
+            }
+
+        }
+
+    }
+
 
     private fun EventChangeListerner(){
 
@@ -109,8 +150,7 @@ class HomeFragment : Fragment() {
                 }
                 //myAdapter = StatusAdapter()
                 binding.recyclerViewPost.adapter = myAdapters
-                //binding.recyclerView2.adapter = StatusAdapter()
-                //  myAdapter.notifyDataSetChanged()
+
                 myAdapters.setData(usersArrayList)
                 // loadingAlert.dismiss()
             }
@@ -121,10 +161,10 @@ class HomeFragment : Fragment() {
     }
 
 
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
-    }
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        _binding = null
+//    }
 
 
 
