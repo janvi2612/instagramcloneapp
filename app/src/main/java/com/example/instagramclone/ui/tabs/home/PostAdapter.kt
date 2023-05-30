@@ -17,7 +17,7 @@ import com.example.instagramclone.utils.DiffUtilExt
 class PostAdapter() : RecyclerView.Adapter<PostAdapter.MyViewHolder>() {
 
     private var calllist = emptyList<Post>()
-    class MyViewHolder(private val binding: FragmentProfileBinding): RecyclerView.ViewHolder(binding.root)
+    class MyViewHolder(private val binding: PostListBinding): RecyclerView.ViewHolder(binding.root)
     {
 
         @SuppressLint("StringFormatInvalid")

@@ -37,7 +37,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/imgverifiedbadge"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintStart_tostartof="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -442,6 +441,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleruserpost"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
