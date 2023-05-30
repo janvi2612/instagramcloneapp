@@ -6,6 +6,13 @@
         <item name="lineHeight">21sp</item>
         <item name="android:textColor">?attr/colorOnTertiary</item>
     </style>
+    <style name="Custom_text_style_16sp_gray">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textSize">18sp</item>
+        <item name="lineHeight">21sp</item>
+        <item name="android:textColor">?attr/colorOnTertiaryFixedVariant</item>
+    </style>
+
     <style name="Custom_text_style_15sp">
         <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textSize">15sp</item>
@@ -46,11 +53,11 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
-<!--    <style name="list_text_style">-->
-<!--        <item name="android:textColor">?attr/colorPrimary</item>-->
-<!--        <item name="android:fontFamily">@font/cherry_swash_multi_weight</item>-->
-<!--        <item name="android:textSize">18sp</item>-->
-<!--        <item name="android:lineHeight">26sp</item>-->
+
+<!--        <item name="android:fontFamily">@font/roboto</item>-->
+<!--        <item name="android:textSize">15sp</item>-->
+<!--        <item name="lineHeight">18sp</item>-->
 <!--    </style>-->
+<!--    -->
 
 </resources>

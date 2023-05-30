@@ -28,7 +28,7 @@ class ProfileAdapter() : RecyclerView.Adapter<ProfileAdapter.MyViewHolder>() {
             binding.variable = currentItem
 
 
-            binding.textitem.text = itemView.context.getString(R.string.text_here,currentItem.userstory.toString())
+            binding.textitem.text = currentItem.userstory.toString()
             binding.image.load(currentItem.image){
                 crossfade(true)
                 transformations(CircleCropTransformation())

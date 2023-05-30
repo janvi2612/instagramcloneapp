@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.instagramclone.R
 import com.example.instagramclone.databinding.FragmentHomeBinding
@@ -27,7 +28,7 @@ class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
     private lateinit var usersArrayList: ArrayList<Profile>
-
+    private lateinit var usersArrayLists: ArrayList<Profile>
 
     private lateinit var myAdapterprofile : ProfileAdapter
     private lateinit var myAdapterpostgrid : UserPostAdapter
@@ -47,10 +48,10 @@ class ProfileFragment : Fragment() {
         myAdapterprofile = ProfileAdapter()
         binding.recyclrview.layoutManager = LinearLayoutManager(requireContext(),
             LinearLayoutManager.HORIZONTAL ,false)
-        usersArrayList = arrayListOf()
+        usersArrayLists = arrayListOf()
 
         myAdapterpostgrid = UserPostAdapter()
-        binding.recycleruserpost.layoutManager = LinearLayoutManager(requireContext())
+        binding.recycleruserpost.layoutManager = GridLayoutManager(requireContext(),3)
         usersArrayList = arrayListOf()
 
         EventChangeListerner()
@@ -79,8 +80,7 @@ class ProfileFragment : Fragment() {
                 }
                 //myAdapter = StatusAdapter()
                 binding.recycleruserpost.adapter = myAdapterpostgrid
-                //binding.recyclerView2.adapter = StatusAdapter()
-                //  myAdapter.notifyDataSetChanged()
+
                 myAdapterpostgrid.setData(usersArrayList)
                 // loadingAlert.dismiss()
             }
@@ -102,7 +102,7 @@ class ProfileFragment : Fragment() {
                     val request : Profile? = data.toObject(Profile::class.java)
 
                     if (request != null) {
-                        usersArrayList.add(request)
+                        usersArrayLists.add(request)
                     }
                     //Timber.e(userArrayList.add(request).toString())
 
@@ -111,7 +111,7 @@ class ProfileFragment : Fragment() {
                 binding.recyclrview.adapter = myAdapterprofile
                 //binding.recyclerView2.adapter = StatusAdapter()
                 //  myAdapter.notifyDataSetChanged()
-                myAdapterprofile.setData(usersArrayList)
+                myAdapterprofile.setData(usersArrayLists)
                 // loadingAlert.dismiss()
             }
 

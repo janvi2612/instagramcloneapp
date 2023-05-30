@@ -119,10 +119,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:ellipsize="end"
-
+                style="Custom_text_style_16sp_gray"
                 android:singleLine="true"
                 android:text="Ruffles"
-                android:textColor="@color/black"
+
                 android:textSize="16sp"
                 app:layout_constraintEnd_toStartOf="@+id/recyclerView2"
                 app:layout_constraintStart_toStartOf="@+id/img_post"

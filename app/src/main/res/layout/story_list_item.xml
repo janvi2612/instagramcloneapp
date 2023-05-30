@@ -109,7 +109,8 @@
         android:text="Ruffles"
         android:ellipsize="end"
         android:singleLine="true"
-        android:textColor="@color/black"
+        style="Custom_text_style_18sp_gray"
+
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/cardViewStationary"
         app:layout_constraintStart_toStartOf="@+id/cardViewStationary"
