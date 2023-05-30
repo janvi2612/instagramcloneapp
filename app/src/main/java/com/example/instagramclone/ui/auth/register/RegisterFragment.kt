@@ -69,7 +69,7 @@ class RegisterFragment : Fragment() {
             .addOnCompleteListener(requireActivity()){
                 if (it.isSuccessful){
 
-                    val user = User(name,email,number,username,"",id)
+                    val user = User(name,email,number,username,"",id,"","","","")
                     db.collection("UserProfile").add(user).addOnSuccessListener {
                         Toast.makeText(requireContext(),"Registration Success",Toast.LENGTH_LONG).show()
                         findNavController().navigate(RegisterFragmentDirections.actionRegisterFragmentToLoginFragment())

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.tabs.profile.ProfileFragment">
 
 
@@ -12,107 +12,93 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="16dp"/>
+        app:layout_constraintGuide_begin="16dp" />
 
-   <androidx.constraintlayout.widget.ConstraintLayout
-       android:id="@+id/constraintlayout1"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toBottomOf="@id/guideline"
-       >
-
-    <ImageView
-        android:id="@+id/imgback"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintlayout1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/imgback"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="13dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="13dp"
-        />
-
-       <TextView
-           android:id="@+id/textusername"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:text="username"
-           android:textColor="@color/black"
-           app:layout_constraintTop_toTopOf="@id/imgback"
-           app:layout_constraintBottom_toBottomOf="@id/imgback"
-           app:layout_constraintStart_toEndOf="@id/imgback"
-           android:layout_marginStart="119dp"
-           android:textSize="16sp"
-           android:textAlignment="center"
-           android:lineHeight="19dp"
-           android:textStyle="bold"
-           />
-
-       <ImageView
-           android:id="@+id/imgverifiedbadge"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:src="@drawable/verified"
-           app:layout_constraintStart_toEndOf="@id/textusername"
-           android:layout_marginStart="4dp"
-           app:layout_constraintTop_toTopOf="@id/textusername"
-           app:layout_constraintBottom_toBottomOf="@id/textusername"
-           />
+        app:layout_constraintTop_toBottomOf="@id/guideline">
 
 
-       <ImageView
-           android:id="@+id/imgnotification"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:src="@drawable/notification"
-           app:layout_constraintTop_toTopOf="@id/textusername"
-           app:layout_constraintBottom_toBottomOf="@id/textusername"
-           app:layout_constraintStart_toEndOf="@id/imgverifiedbadge"
-           android:layout_marginStart="62dp"
-           app:layout_constraintEnd_toEndOf="parent"
-           android:layout_marginEnd="60dp"
-           />
+        <TextView
+            android:id="@+id/textusername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:lineHeight="40dp"
+            android:text="username"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/imgverifiedbadge"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_tostartof="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgverifiedbadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/followers"
+            app:layout_constraintBottom_toBottomOf="@id/textusername"
+            app:layout_constraintStart_toEndOf="@id/textusername"
+            app:layout_constraintTop_toTopOf="@id/textusername" />
 
 
-       <ImageView
-           android:id="@+id/imgmore"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           app:layout_constraintEnd_toEndOf="parent"
-           android:src="@drawable/more"
-           app:layout_constraintStart_toEndOf="@id/imgnotification"
-           app:layout_constraintTop_toTopOf="@id/imgnotification"
-           app:layout_constraintBottom_toBottomOf="@id/imgnotification"
-           android:layout_marginEnd="17dp"
-           android:layout_marginStart="30dp"
-           />
+        <ImageView
+            android:id="@+id/imgnotification"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="191dp"
+            android:layout_marginEnd="60dp"
+            android:src="@drawable/imgadd"
+            app:layout_constraintBottom_toBottomOf="@id/textusername"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgverifiedbadge"
+            app:layout_constraintTop_toTopOf="@id/textusername" />
 
-   </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/imgmore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="14dp"
+            android:src="@drawable/imgmore"
+            app:layout_constraintBottom_toBottomOf="@id/imgnotification"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imgnotification"
+            app:layout_constraintTop_toTopOf="@id/imgnotification" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintlayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/constraintlayout1"
-        app:layout_constraintStart_toStartOf="@id/constraintlayout1"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="@id/constraintlayout1"
-      >
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/constraintlayout1"
+        app:layout_constraintTop_toBottomOf="@id/constraintlayout1">
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardViewStationary"
+            style="@style/Circular"
             android:layout_width="64dp"
             android:layout_height="64dp"
+            android:layout_marginStart="12dp"
             android:elevation="8dp"
-            style="@style/Circular"
             app:cardCornerRadius="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-           app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginStart="12dp">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -150,8 +136,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:elevation="10dp"
-                                app:strokeWidth="2dp"
-                                android:src="@drawable/dog_1" />
+                                android:src="@drawable/dog_1"
+                                app:strokeWidth="2dp" />
 
                         </com.google.android.material.card.MaterialCardView>
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -165,92 +151,85 @@
             android:id="@+id/txtpostno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/post_no"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@id/cardViewStationary"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="27dp"
             android:layout_marginBottom="45dp"
-            android:layout_marginStart="60dp"
-            android:textColor="@color/black"
+            android:text="@string/post_no"
             android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"
             android:textStyle="bold"
-            />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cardViewStationary"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtpost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/txtpostno"
-            app:layout_constraintEnd_toEndOf="@id/txtpostno"
-            app:layout_constraintTop_toBottomOf="@id/txtpostno"
             android:text="@string/Posts"
-            android:textSize="14sp"
             android:textAlignment="center"
             android:textColor="@color/black"
-             />
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/txtpostno"
+            app:layout_constraintStart_toStartOf="@id/txtpostno"
+            app:layout_constraintTop_toBottomOf="@id/txtpostno" />
 
         <TextView
             android:id="@+id/txtfollowersno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/txtpostno"
-            app:layout_constraintTop_toTopOf="@id/txtpostno"
-            app:layout_constraintBottom_toBottomOf="@id/txtpostno"
+            android:layout_marginStart="38dp"
             android:text="@string/followers_no"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:layout_marginStart="38dp"
             android:textStyle="bold"
-            />
+            app:layout_constraintBottom_toBottomOf="@id/txtpostno"
+            app:layout_constraintStart_toEndOf="@id/txtpostno"
+            app:layout_constraintTop_toTopOf="@id/txtpostno" />
 
         <TextView
             android:id="@+id/txtfollower"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/txtfollowersno"
-            app:layout_constraintEnd_toEndOf="@id/txtfollowersno"
-            app:layout_constraintTop_toBottomOf="@id/txtfollowersno"
             android:text="@string/Followers"
-            android:textSize="14sp"
             android:textAlignment="center"
             android:textColor="@color/black"
-            />
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/txtfollowersno"
+            app:layout_constraintStart_toStartOf="@id/txtfollowersno"
+            app:layout_constraintTop_toBottomOf="@id/txtfollowersno" />
 
 
         <TextView
             android:id="@+id/txtfollowingno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toEndOf="@id/txtfollowersno"
-            app:layout_constraintTop_toTopOf="@id/txtfollowersno"
-            app:layout_constraintBottom_toBottomOf="@id/txtfollowersno"
+            android:layout_marginStart="43dp"
+            android:layout_marginEnd="41dp"
             android:text="@string/following_no"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="14sp"
-            android:layout_marginStart="43dp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/txtfollowersno"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="41dp"
-            />
-
+            app:layout_constraintStart_toEndOf="@id/txtfollowersno"
+            app:layout_constraintTop_toTopOf="@id/txtfollowersno" />
 
 
         <TextView
             android:id="@+id/txtfollowing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@id/txtfollowingno"
-            app:layout_constraintEnd_toEndOf="@id/txtfollowingno"
-            app:layout_constraintTop_toBottomOf="@id/txtfollowingno"
             android:text="@string/Following"
-            android:textSize="14sp"
             android:textAlignment="center"
             android:textColor="@color/black"
-            />
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/txtfollowingno"
+            app:layout_constraintStart_toStartOf="@id/txtfollowingno"
+            app:layout_constraintTop_toBottomOf="@id/txtfollowingno" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -258,17 +237,16 @@
         android:id="@+id/txtusername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/Username"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="34dp"
         android:layout_marginStart="12dp"
-        app:layout_constraintTop_toBottomOf="@id/constraintlayout2"
         android:layout_marginTop="6dp"
-        android:textStyle="bold"
+        android:layout_marginEnd="34dp"
+        android:text="@string/Username"
         android:textColor="@color/black"
         android:textSize="13sp"
-        />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/constraintlayout2" />
 
     <TextView
         android:id="@+id/txtcategory"
@@ -280,7 +258,7 @@
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="@id/txtusername"
         app:layout_constraintStart_toStartOf="@+id/txtusername"
-        app:layout_constraintTop_toBottomOf="@id/txtusername"/>
+        app:layout_constraintTop_toBottomOf="@id/txtusername" />
 
     <TextView
         android:id="@+id/txt"
@@ -299,47 +277,45 @@
         android:id="@+id/txtlink"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/txt"
-        app:layout_constraintTop_toBottomOf="@id/txt"
-        app:layout_constraintEnd_toEndOf="@id/txt"
-        android:textSize="13sp"
-        android:textStyle="bold"
+        android:layout_marginTop="3dp"
         android:text="@string/link"
         android:textColor="@color/textlink"
-        android:layout_marginTop="3dp"/>
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/txt"
+        app:layout_constraintStart_toStartOf="@id/txt"
+        app:layout_constraintTop_toBottomOf="@id/txt" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialcarview1"
         android:layout_width="28dp"
         android:layout_height="28dp"
+        android:layout_marginTop="11dp"
         app:cardCornerRadius="50dp"
         app:cardElevation="3dp"
         app:layout_constraintStart_toStartOf="@id/txtlink"
-        app:layout_constraintTop_toBottomOf="@id/txtlink"
-        android:layout_marginTop="11dp"
-        >
+        app:layout_constraintTop_toBottomOf="@id/txtlink">
+
         <com.google.android.material.imageview.ShapeableImageView
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:src="@drawable/imgreplace1"
-            />
+            android:src="@drawable/imgreplace1" />
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/materialcardview2"
         android:layout_width="28dp"
         android:layout_height="28dp"
+        android:layout_marginStart="16dp"
         app:cardCornerRadius="50dp"
         app:layout_constraintBottom_toBottomOf="@id/materialcarview1"
-        app:layout_constraintTop_toTopOf="@id/materialcarview1"
         app:layout_constraintStart_toStartOf="@id/materialcarview1"
-        android:layout_marginStart="16dp"
-        >
+        app:layout_constraintTop_toTopOf="@id/materialcarview1">
 
         <ImageView
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:src="@drawable/imgreplace2"/>
+            android:src="@drawable/imgreplace2" />
     </com.google.android.material.card.MaterialCardView>
 
 
@@ -347,13 +323,13 @@
         android:id="@+id/materialcardview3"
         android:layout_width="28dp"
         android:layout_height="28dp"
+        android:layout_marginStart="19dp"
         app:cardCornerRadius="50dp"
         app:cardElevation="2dp"
         app:layout_constraintBottom_toBottomOf="@id/materialcardview2"
-        app:layout_constraintTop_toTopOf="@id/materialcardview2"
         app:layout_constraintStart_toStartOf="@id/materialcardview2"
-        android:layout_marginStart="19dp"
-        >
+        app:layout_constraintTop_toTopOf="@id/materialcardview2">
+
         <ImageView
             android:layout_width="28dp"
             android:layout_height="28dp"
@@ -362,89 +338,48 @@
 
 
     <TextView
+        android:id="@+id/textView5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/materialcardview3"
-        app:layout_constraintTop_toTopOf="@id/materialcardview3"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:text="@string/txtfollowedby"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@id/materialcardview3"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="12dp"
-        android:layout_marginStart="12dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:text="@string/txtfollowedby"/>
+        app:layout_constraintStart_toEndOf="@id/materialcardview3"
+        app:layout_constraintTop_toTopOf="@id/materialcardview3" />
 
-    <Button
-        android:id="@+id/btnfollow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/materialcardview3"
-        android:layout_marginTop="19dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginEnd="12dp"
-        android:text="@string/follow"
-        android:textColor="@color/white"/>
 
     <EditText
         android:id="@+id/edtmessage"
-        android:layout_width="105dp"
+        android:layout_width="0dp"
         android:layout_height="30dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/custom_edittext1"
         android:text="@string/message"
         android:textAlignment="center"
         android:textSize="13sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnfollow"
-        tools:ignore="TouchTargetSizeCheck"/>
-
-    <EditText
-        android:id="@+id/edtsubscribe"
-        android:layout_width="105dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="6dp"
-        android:background="@drawable/custom_edittext1"
-        android:text="@string/subscribe"
-        android:textAlignment="center"
-        android:textSize="13sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/edtmessage"
-        app:layout_constraintStart_toEndOf="@id/edtmessage"
-        app:layout_constraintTop_toTopOf="@id/edtmessage"
+        app:layout_constraintEnd_toStartOf="@+id/txtaddperson"
+        app:layout_constraintStart_toStartOf="@+id/materialcarview1"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
         tools:ignore="TouchTargetSizeCheck" />
 
-
-    <EditText
-        android:id="@+id/edtcontact"
-        android:layout_width="105dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="6dp"
-        android:background="@drawable/custom_edittext1"
-        android:text="@string/contact"
-        android:textAlignment="center"
-        android:textSize="13sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/edtsubscribe"
-        app:layout_constraintStart_toEndOf="@id/edtsubscribe"
-        app:layout_constraintTop_toTopOf="@id/edtsubscribe"
-        tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/txtaddperson"
-        android:layout_width="32dp"
+        android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="6dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/custom_edittext1"
-        app:layout_constraintBottom_toBottomOf="@id/edtcontact"
-        app:layout_constraintEnd_toEndOf="@+id/btnfollow"
-        app:layout_constraintStart_toEndOf="@+id/edtcontact"
-        app:layout_constraintTop_toTopOf="@id/edtcontact"
         android:drawableStart="@drawable/addperson"
         android:paddingStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/edtmessage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edtmessage"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck">
 
     </EditText>
@@ -506,7 +441,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"

@@ -11,7 +11,6 @@ import coil.ImageLoader
 import coil.imageLoader
 import coil.load
 import coil.transform.CircleCropTransformation
-import com.bumptech.glide.Glide
 import com.example.instagramclone.R
 import com.example.instagramclone.databinding.StoryListItemBinding
 import com.example.instagramclone.model.Status
