@@ -49,6 +49,7 @@
         android:paddingStart="18dp"
         android:text="@string/continue_with_facebook"
         android:textAllCaps="false"
+        app:iconTint="@color/white"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:cornerRadius="8dp"
