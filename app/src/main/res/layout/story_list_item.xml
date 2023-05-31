@@ -103,14 +103,14 @@
 
     <TextView
         android:id="@+id/status_id"
-        android:layout_width="wrap_content"
+        style="Custom_text_style_18sp_gray"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Ruffles"
         android:ellipsize="end"
         android:singleLine="true"
-        style="Custom_text_style_18sp_gray"
-
+        android:text="Ruffles"
+        android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/cardViewStationary"
         app:layout_constraintStart_toStartOf="@+id/cardViewStationary"

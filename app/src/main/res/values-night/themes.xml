@@ -20,5 +20,16 @@
         <item name="colorTertiaryFixed">@color/background_gray</item>
         <item name="colorOnTertiaryContainer">@color/hint_color</item>
         <item name="colorOnTertiaryFixedVariant">@color/text_gray</item>
+        <item name="colorOnBackground">@color/black</item>
     </style>
+
+    <style name="Splash" parent="Theme.SplashScreen">
+        <item name="colorOnBackground">?attr/colorOnBackground</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_instagram</item>
+        <item name="duration">500</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="postSplashScreenTheme">@style/Theme.InstagramClone</item>
+    </style>
+
 </resources>

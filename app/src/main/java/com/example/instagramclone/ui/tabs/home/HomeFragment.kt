@@ -62,21 +62,9 @@ class HomeFragment : Fragment() {
         return binding.root
 
     }
-//    override fun onCreateOptionsMenu(menu: Menu, ms: MenuInflater) : Boolean {
-//        val inflater: MenuInflater = ms
-//        inflater.inflate(R.menu.top_menu, menu)
-//        return true
-//    }
-
 
     private fun setUpui(){
         topicList = HashMap()
-//        val user_name = binding.textView5.text.toString()
-//        val user_profle = binding.btnEditProfileImg.load(""){
-//            crossfade(true)
-//            transformations()
-//            error(R.drawable.baseline_error_24)
-//        }
 
         db.collection("UserProfile").get().addOnSuccessListener {documents ->
 

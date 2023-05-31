@@ -36,8 +36,6 @@ class StatusAdapter() : RecyclerView.Adapter<StatusAdapter.MyViewHolder>() {
 
         }
 
-
-
         companion object{
             fun from(parent: ViewGroup) : MyViewHolder{
                 val layoutInflater = LayoutInflater.from(parent.context)
