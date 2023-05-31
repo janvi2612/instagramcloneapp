@@ -129,7 +129,7 @@ class ProfileFragment : Fragment() {
         db.collection("ProfileDetails")
             .get().addOnSuccessListener {
 
-                for(data in it.documents)
+                 for(data in it.documents)
                 {
                     val request : Profile? = data.toObject(Profile::class.java)
 

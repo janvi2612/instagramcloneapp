@@ -38,7 +38,7 @@
     <string name="link">Link goes here</string>
     <string name="txtfollowedby">Followed by username, username and 100 others</string>
     <string name="follow">Follow</string>
-    <string name="message">Edit Profile</string>
+    <string name="message"><b>Edit Profile</b></string>
     <string name="subscribe">Subscribe</string>
     <string name="contact">Contact</string>
     <string name="username">username</string>

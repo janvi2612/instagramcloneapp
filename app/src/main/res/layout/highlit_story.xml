@@ -77,13 +77,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_here"
+        style="@style/Custom_text_style_16sp_gray"
         android:textStyle="normal"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@id/cardViewStationary"
         app:layout_constraintEnd_toEndOf="@id/cardViewStationary"
         app:layout_constraintTop_toBottomOf="@id/cardViewStationary"
         android:layout_marginTop="4dp"
-        android:textColor="@color/black"
+
 
         />
 
