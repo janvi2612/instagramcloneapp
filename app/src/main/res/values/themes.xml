@@ -11,7 +11,13 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
 
+        <!-- Optional: set to transparent if your app is drawing behind the status bar. -->
+<!--        <item name="android:statusBarColor">-->
+<!--            @android:color/transparent-->
+<!--        </item>-->
+
         <item name="android:statusBarColor">@color/white</item>
+
         <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
         <item name="colorOnTertiary">@color/text_gray</item>

@@ -8,6 +8,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import coil.load
+import coil.transform.CircleCropTransformation
 import com.example.instagramclone.R
 import com.example.instagramclone.databinding.FragmentHomeBinding
 import com.example.instagramclone.model.Post
@@ -90,7 +91,7 @@ class HomeFragment : Fragment() {
                     binding.textView5.text = document.get("username").toString()
                     binding.imgPost.load(document.get("profilepic").toString()){
                         crossfade(true)
-                        transformations()
+                        transformations(CircleCropTransformation())
                         error(R.drawable.baseline_error_24)
                     }
                 }
