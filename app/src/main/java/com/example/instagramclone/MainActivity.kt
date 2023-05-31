@@ -74,9 +74,6 @@ class MainActivity : AppCompatActivity() {
         )
         setCurrentDestinationListener()
 
-
-
-
     }
     fun isDarkMode(context: Context): Boolean {
         val darkModeFlag = context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
