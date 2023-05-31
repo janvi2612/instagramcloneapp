@@ -1,8 +1,10 @@
 package com.example.instagramclone.ui.tabs.home
 
 import android.annotation.SuppressLint
+import android.text.SpannableStringBuilder
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.text.bold
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
@@ -24,7 +26,7 @@ class PostAdapter() : RecyclerView.Adapter<PostAdapter.MyViewHolder>() {
         fun bind(currentItem :Post){
             binding.variable = currentItem
 
-            binding.txtUsernameCaption.text = itemView.context.getString(R.string.user_caption,currentItem.caption.toString())
+            binding.txtUsernameCaption.text = SpannableStringBuilder().bold { append(currentItem.caption) }.append(itemView.context.getText(R.string.user_caption))
             binding.imgInsta.load(currentItem.img){
                 crossfade(true)
                 transformations(CircleCropTransformation())

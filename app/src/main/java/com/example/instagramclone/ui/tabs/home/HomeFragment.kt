@@ -110,6 +110,7 @@ class HomeFragment : Fragment() {
 
                     for(data in it.documents)
                     {
+
                         //Timber.e(data.toString())
                         val requests : Status? = data.toObject(Status::class.java)
                         
@@ -137,7 +138,7 @@ class HomeFragment : Fragment() {
     private fun EventChangeListernerPost(){
 
         //loadingAlert.show()
-        db.collection("UserAddPost")
+        db.collection("UserAddPost").orderBy("timestamp",Query.Direction.DESCENDING)
             .get().addOnSuccessListener {
 
                 for(data in it.documents)

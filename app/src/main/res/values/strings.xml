@@ -21,7 +21,7 @@
     <string name="user_id">%1$s</string>
     <string name="like">Like</string>
     <string name="like_no">%1$s</string>
-    <string name="user_caption"><b>%1$s</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</string>
+    <string name="user_caption">\t Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</string>
     <string name="user_id_re">Rupal0993</string>
     <string name="btn_confirm">Confirm</string>
     <string name="btn_delete">Delete</string>

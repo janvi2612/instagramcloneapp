@@ -8,22 +8,23 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.instagramclone.R
 import com.example.instagramclone.databinding.PostGridlayoutBinding
+import com.example.instagramclone.model.Post
 import com.example.instagramclone.model.Profile
 import com.example.instagramclone.utils.DiffUtilExt
 import timber.log.Timber
 
 class UserPostAdapter() : RecyclerView.Adapter<UserPostAdapter.MyViewHolder>() {
 
-    private var calllist = emptyList<Profile>()
+    private var calllist = emptyList<Post>()
     class MyViewHolder(private val binding: PostGridlayoutBinding): RecyclerView.ViewHolder(binding.root)
     {
 
 
-        fun bind(currentItem : Profile){
+        fun bind(currentItem : Post){
             binding.variable = currentItem
             Timber.e(currentItem.toString())
 
-            binding.imagepost.load(currentItem.image){
+            binding.imagepost.load(currentItem.imgpost){
                 crossfade(true)
                 transformations()
                 error(R.drawable.baseline_error_24)
@@ -61,7 +62,7 @@ class UserPostAdapter() : RecyclerView.Adapter<UserPostAdapter.MyViewHolder>() {
         return  calllist.size
     }
 
-    fun setData(Result:List<Profile>){
+    fun setData(Result:List<Post>){
 
 //        this.callList= user
 //        notifyDataSetChanged()

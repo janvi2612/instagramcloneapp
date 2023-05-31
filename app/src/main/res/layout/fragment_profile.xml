@@ -154,27 +154,30 @@
 
         <TextView
             android:id="@+id/txtpostno"
+            style="@style/Custom_text_style_16sp_gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
+            android:layout_marginStart="41dp"
             android:layout_marginTop="27dp"
             android:layout_marginBottom="45dp"
             android:text="@string/post_no"
             android:textAlignment="center"
-            style="@style/Custom_text_style_16sp_gray"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/cardViewStationary"
+            app:layout_constraintEnd_toStartOf="@+id/txtfollowersno"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/cardViewStationary"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtpost"
+            style="@style/Custom_text_style_16sp_gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Posts"
             android:textAlignment="center"
-            style="@style/Custom_text_style_16sp_gray"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@id/txtpostno"
             app:layout_constraintStart_toStartOf="@id/txtpostno"
@@ -182,25 +185,27 @@
 
         <TextView
             android:id="@+id/txtfollowersno"
+            style="@style/Custom_text_style_16sp_gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="38dp"
             android:text="@string/followers_no"
             android:textAlignment="center"
-            style="@style/Custom_text_style_16sp_gray"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/txtpostno"
-            app:layout_constraintStart_toEndOf="@id/txtpostno"
+            app:layout_constraintEnd_toStartOf="@+id/txtfollowingno"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/txtpostno"
             app:layout_constraintTop_toTopOf="@id/txtpostno" />
 
         <TextView
             android:id="@+id/txtfollower"
+            style="@style/Custom_text_style_16sp_gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Followers"
             android:textAlignment="center"
-            style="@style/Custom_text_style_16sp_gray"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@id/txtfollowersno"
             app:layout_constraintStart_toStartOf="@id/txtfollowersno"
@@ -209,28 +214,29 @@
 
         <TextView
             android:id="@+id/txtfollowingno"
+            style="@style/Custom_text_style_16sp_gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="43dp"
             android:layout_marginEnd="41dp"
             android:text="@string/following_no"
             android:textAlignment="center"
-            style="@style/Custom_text_style_16sp_gray"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/txtfollowersno"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/txtfollowersno"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/txtfollowersno"
             app:layout_constraintTop_toTopOf="@id/txtfollowersno" />
 
 
         <TextView
             android:id="@+id/txtfollowing"
+            style="@style/Custom_text_style_16sp_gray"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/Following"
             android:textAlignment="center"
-            style="@style/Custom_text_style_16sp_gray"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@id/txtfollowingno"
             app:layout_constraintStart_toStartOf="@id/txtfollowingno"
