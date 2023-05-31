@@ -3,6 +3,7 @@ package com.example.instagramclone.ui.auth.login
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.TokenWatcher
+import android.util.Patterns
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -45,6 +46,9 @@ class LoginFragment : Fragment() {
     private fun login(){
         val email = binding.etLoginUserName.text.toString()
         val password = binding.etLoginPassword.text.toString()
+        if (!validation()){
+            return
+        }
         auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(requireActivity()){
             if (it.isSuccessful){
                 PrefManager.setBoolean(PrefManager.IS_LOGIN,true)
@@ -56,7 +60,45 @@ class LoginFragment : Fragment() {
             }
         }
     }
+    private fun validation(): Boolean {
+        if (binding.etLoginUserName.text.toString().isEmpty()){
+            binding.etLoginUserName.error = "Username is Required"
+            binding.etLoginUserName.requestFocus()
+            return false
+        }
+        else if (!Patterns.EMAIL_ADDRESS.matcher(binding.etLoginUserName.text.toString()).matches()){
+            binding.etLoginUserName.error = "Invalid Email"
+            binding.etLoginUserName.requestFocus()
+            return false
+        }
 
+        else if (binding.etLoginPassword.text.toString().isEmpty()){
+            binding.etLoginPassword.error = "Password IS Required"
+            binding.etLoginPassword.requestFocus()
+            return false
+        }
+        else if (binding.etLoginPassword.text.toString().length < 8){
+            binding.etLoginPassword.error = "Password need at least 8 char"
+            binding.etLoginPassword.requestFocus()
+            return false
+        }
+        else if(!binding.etLoginPassword.text.toString().matches(".*[A-Z].*".toRegex())) {
+            binding.etLoginPassword.error = "Must Contain 1 Upper-case Character"
+            binding.etLoginPassword.requestFocus()
+            return false
+        }
+        else if(!binding.etLoginPassword.text.toString().matches(".*[a-z].*".toRegex())) {
+            binding.etLoginPassword.error = "Must Contain 1 Lower-case Character"
+            binding.etLoginPassword.requestFocus()
+            return false
+        }
+        else if(!binding.etLoginPassword.text.toString().matches(".*[@#\$%^&+=].*".toRegex())) {
+            binding.etLoginPassword.error = "Must Contain 1 Special Character (@#\$%^&+=)"
+            binding.etLoginPassword.requestFocus()
+            return false
+        }
+        return true
+    }
 
 
     override fun onDestroy() {

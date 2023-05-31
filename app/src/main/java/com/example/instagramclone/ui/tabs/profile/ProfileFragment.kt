@@ -8,14 +8,8 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.instagramclone.R
-import com.example.instagramclone.databinding.FragmentHomeBinding
 import com.example.instagramclone.databinding.FragmentProfileBinding
-import com.example.instagramclone.model.Post
 import com.example.instagramclone.model.Profile
-import com.example.instagramclone.model.Status
-import com.example.instagramclone.ui.tabs.home.PostAdapter
-import com.example.instagramclone.ui.tabs.home.StatusAdapter
 import com.example.instagramclone.utils.getStatusBarHeight
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -27,9 +21,9 @@ import timber.log.Timber
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
-    private lateinit var usersArrayList: ArrayList<Profile>
-    private lateinit var usersArrayLists: ArrayList<Profile>
 
+    private lateinit var usersArrayLists: ArrayList<Profile>
+    private lateinit var usersArrayList: ArrayList<Profile>
     private lateinit var myAdapterprofile : ProfileAdapter
     private lateinit var myAdapterpostgrid : UserPostAdapter
 
@@ -45,14 +39,18 @@ class ProfileFragment : Fragment() {
         _binding= FragmentProfileBinding.inflate(inflater,container,false)
         db = FirebaseFirestore.getInstance()
         binding.guideline.setGuidelineBegin(getStatusBarHeight())
+
+
+        myAdapterpostgrid = UserPostAdapter()
+        binding.recycleruserpost.layoutManager = GridLayoutManager(requireContext(),3)
+
+        usersArrayList = arrayListOf()
+
         myAdapterprofile = ProfileAdapter()
         binding.recyclrview.layoutManager = LinearLayoutManager(requireContext(),
             LinearLayoutManager.HORIZONTAL ,false)
         usersArrayLists = arrayListOf()
 
-        myAdapterpostgrid = UserPostAdapter()
-        binding.recycleruserpost.layoutManager = GridLayoutManager(requireContext(),3)
-        usersArrayList = arrayListOf()
 
         EventChangeListerner()
         EventChangeListernerPost()
@@ -75,24 +73,13 @@ class ProfileFragment : Fragment() {
                         Timber.e(requests.toString())
                         usersArrayList.add(requests)
                     }
-                    //Timber.e(userArrayList.add(request).toString())
-
                 }
-                //myAdapter = StatusAdapter()
                 binding.recycleruserpost.adapter = myAdapterpostgrid
-
                 myAdapterpostgrid.setData(usersArrayList)
                 // loadingAlert.dismiss()
             }
-
-
-
-
     }
-
-
     private fun EventChangeListernerPost(){
-
         //loadingAlert.show()
         db.collection("ProfileDetails")
             .get().addOnSuccessListener {
@@ -104,20 +91,12 @@ class ProfileFragment : Fragment() {
                     if (request != null) {
                         usersArrayLists.add(request)
                     }
-                    //Timber.e(userArrayList.add(request).toString())
-
                 }
                 //myAdapter = StatusAdapter()
                 binding.recyclrview.adapter = myAdapterprofile
-                //binding.recyclerView2.adapter = StatusAdapter()
-                //  myAdapter.notifyDataSetChanged()
                 myAdapterprofile.setData(usersArrayLists)
                 // loadingAlert.dismiss()
             }
-
-
-
-
     }
 
 

@@ -6,12 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import coil.transform.CircleCropTransformation
 import com.example.instagramclone.R
-import com.example.instagramclone.databinding.HighlitStoryBinding
 import com.example.instagramclone.databinding.PostGridlayoutBinding
 import com.example.instagramclone.model.Profile
 import com.example.instagramclone.utils.DiffUtilExt
+import timber.log.Timber
 
 class UserPostAdapter() : RecyclerView.Adapter<UserPostAdapter.MyViewHolder>() {
 
@@ -19,11 +18,10 @@ class UserPostAdapter() : RecyclerView.Adapter<UserPostAdapter.MyViewHolder>() {
     class MyViewHolder(private val binding: PostGridlayoutBinding): RecyclerView.ViewHolder(binding.root)
     {
 
-        @SuppressLint("StringFormatInvalid")
+
         fun bind(currentItem : Profile){
             binding.variable = currentItem
-
-
+            Timber.e(currentItem.toString())
 
             binding.imagepost.load(currentItem.image){
                 crossfade(true)

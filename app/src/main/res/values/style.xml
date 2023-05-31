@@ -24,6 +24,7 @@
         <item name="android:textColorHint">?attr/colorOnTertiaryContainer</item>
         <item name="android:textSize">13sp</item>
         <item name="lineHeight">15sp</item>
+        <item name="android:textColor">?attr/colorOnTertiaryFixedVariant</item>
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="android:paddingHorizontal">18dp</item>
         <item name="android:paddingVertical">13dp</item>

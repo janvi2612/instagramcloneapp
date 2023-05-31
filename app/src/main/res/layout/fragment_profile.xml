@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.tabs.profile.ProfileFragment">
@@ -31,7 +35,7 @@
             android:lineHeight="40dp"
             android:text="@string/username"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            style="@style/Custom_text_style_16sp_gray"
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -157,7 +161,7 @@
             android:layout_marginBottom="45dp"
             android:text="@string/post_no"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            style="@style/Custom_text_style_16sp_gray"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -170,7 +174,7 @@
             android:layout_height="wrap_content"
             android:text="@string/Posts"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            style="@style/Custom_text_style_16sp_gray"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@id/txtpostno"
             app:layout_constraintStart_toStartOf="@id/txtpostno"
@@ -183,7 +187,7 @@
             android:layout_marginStart="38dp"
             android:text="@string/followers_no"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            style="@style/Custom_text_style_16sp_gray"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/txtpostno"
@@ -196,7 +200,7 @@
             android:layout_height="wrap_content"
             android:text="@string/Followers"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            style="@style/Custom_text_style_16sp_gray"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@id/txtfollowersno"
             app:layout_constraintStart_toStartOf="@id/txtfollowersno"
@@ -211,7 +215,7 @@
             android:layout_marginEnd="41dp"
             android:text="@string/following_no"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            style="@style/Custom_text_style_16sp_gray"
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/txtfollowersno"
@@ -226,7 +230,7 @@
             android:layout_height="wrap_content"
             android:text="@string/Following"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            style="@style/Custom_text_style_16sp_gray"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@id/txtfollowingno"
             app:layout_constraintStart_toStartOf="@id/txtfollowingno"
@@ -242,7 +246,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginEnd="34dp"
         android:text="@string/Username"
-        android:textColor="@color/black"
+        style="@style/Custom_text_style_16sp_gray"
         android:textSize="13sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -267,7 +271,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
         android:text="@string/text"
-        android:textColor="@color/black"
+        style="@style/Custom_text_style_16sp_gray"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="@id/txtcategory"
         app:layout_constraintHorizontal_bias="0.0"
@@ -344,9 +348,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
-        android:text="@string/txtfollowedby"
-        android:textColor="@color/black"
-        android:textStyle="bold"
+        android:text="Followed by username, username and 100 others"
+        style="@style/Custom_text_style_16sp_gray"
         app:layout_constraintBottom_toBottomOf="@id/materialcardview3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/materialcardview3"
@@ -360,6 +363,7 @@
         android:layout_marginTop="23dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/custom_edittext1"
+        style="@style/Custom_text_style_16sp_gray"
         android:text="@string/message"
         android:editable="false"
         android:clickable="true"
@@ -447,16 +451,17 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleruserpost"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/constraintlayout3"
-        app:spanCount="3"
-        tools:ignore="SpeakableTextPresentCheck"
-        tools:itemCount="9"
-        tools:listitem="@layout/post_gridlayout" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintlayout3"
+        tools:listitem="@layout/post_gridlayout">
 
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
