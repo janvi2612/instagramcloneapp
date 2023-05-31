@@ -32,14 +32,7 @@
 
 
     </style>
-    <style name="Splash" parent="Theme.SplashScreen">
 
-        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_instagram</item>
-        <item name="duration">500</item>
-        <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
-        <item name="postSplashScreenTheme">@style/Theme.InstagramClone</item>
-    </style>
 
 
 </resources>
